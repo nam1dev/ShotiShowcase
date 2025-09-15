@@ -6,6 +6,7 @@ import { RefreshCw, AlertCircle } from 'lucide-react';
 import VideoPlayer from './VideoPlayer';
 import VideoMetadata from './VideoMetadata';
 import DeveloperProfile from './DeveloperProfile';
+import ThemeSelector from './ThemeSelector';
 
 interface VideoData {
   title: string;
@@ -54,7 +55,6 @@ export default function ShotiFeed() {
 
   const handleRefresh = () => {
     setRefreshKey(prev => prev + 1);
-    refetch();
   };
 
   if (isLoading) {
@@ -93,16 +93,19 @@ export default function ShotiFeed() {
           <h1 className="text-2xl font-display font-bold text-primary" data-testid="text-app-title">
             Shoti
           </h1>
-          <Button 
-            size="sm" 
-            variant="outline" 
-            onClick={handleRefresh}
-            disabled={isFetching}
-            data-testid="button-refresh"
-          >
-            <RefreshCw className={`w-4 h-4 mr-2 ${isFetching ? 'animate-spin' : ''}`} />
-            {isFetching ? 'Loading...' : 'New Video'}
-          </Button>
+          <div className="flex items-center gap-2">
+            <ThemeSelector />
+            <Button 
+              size="sm" 
+              variant="outline" 
+              onClick={handleRefresh}
+              disabled={isFetching}
+              data-testid="button-refresh"
+            >
+              <RefreshCw className={`w-4 h-4 mr-2 ${isFetching ? 'animate-spin' : ''}`} />
+              {isFetching ? 'Loading...' : 'New Video'}
+            </Button>
+          </div>
         </div>
       </header>
 
@@ -110,6 +113,7 @@ export default function ShotiFeed() {
         {videoData && (
           <>
             <VideoPlayer
+              key={videoData.shotiurl}
               videoUrl={videoData.shotiurl}
               coverImage={videoData.cover_image}
               title={videoData.title}
