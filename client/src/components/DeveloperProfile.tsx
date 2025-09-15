@@ -5,7 +5,7 @@ import { Button } from '@/components/ui/button';
 import { Code2, Github, Linkedin, Mail, Star } from 'lucide-react';
 
 export default function DeveloperProfile() {
-  const skills = ['React', 'TypeScript', 'Node.js', 'Tailwind CSS'];
+  const skills = ['HTML', 'CSS', 'Python', 'JavaScript'];
   
   const handleContact = (type: string) => {
     console.log(`${type} contact clicked`);

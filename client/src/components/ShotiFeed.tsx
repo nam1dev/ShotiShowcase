@@ -21,7 +21,7 @@ interface VideoData {
 export default function ShotiFeed() {
   const [refreshKey, setRefreshKey] = useState(0);
 
-  const { data: videoData, isLoading, error, refetch } = useQuery({
+  const { data: videoData, isLoading, error, refetch, isFetching } = useQuery({
     queryKey: ['shoti-video', refreshKey],
     queryFn: async (): Promise<VideoData> => {
       const response = await fetch('/api/shoti');
@@ -97,10 +97,11 @@ export default function ShotiFeed() {
             size="sm" 
             variant="outline" 
             onClick={handleRefresh}
+            disabled={isFetching}
             data-testid="button-refresh"
           >
-            <RefreshCw className="w-4 h-4 mr-2" />
-            New Video
+            <RefreshCw className={`w-4 h-4 mr-2 ${isFetching ? 'animate-spin' : ''}`} />
+            {isFetching ? 'Loading...' : 'New Video'}
           </Button>
         </div>
       </header>
