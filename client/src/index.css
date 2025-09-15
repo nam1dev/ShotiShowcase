@@ -216,6 +216,7 @@
 }
 
 /**
+ * JAY MAR WAS HERE! :) *
  * Using the elevate system.
  * Automatic contrast adjustment.
  *
@@ -301,7 +302,7 @@
     pointer-events: none;
     position: absolute;
     inset: 0px;
-    /*border-radius: inherit;   match rounded corners */
+    /*border-radius: inherit;   match rounded corners XD */
     border-radius: inherit;
     z-index: 999;
     /* sits in front of content */
@@ -317,7 +318,7 @@
     background-color: var(--elevate-2);
   }
 
-  /* If there's a 1px border, adjust the inset so that it covers that parent's border */
+  /* If there's a 1px border, adjust the inset so that it covers that parent's border btw */
   .border.hover-elevate:not(.no-hover-interaction-elevate)::after,
   .border.active-elevate:not(.no-active-interaction-elevate)::after,
   .border.hover-elevate-2:not(.no-hover-interaction-elevate)::after,

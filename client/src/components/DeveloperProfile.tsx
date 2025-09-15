@@ -5,7 +5,7 @@ import { Button } from '@/components/ui/button';
 import { Code2, Github, Linkedin, Mail, Star } from 'lucide-react';
 
 export default function DeveloperProfile() {
-  const skills = ['HTML', 'CSS', 'Python', 'JavaScript'];
+  const skills = ['HTML', 'CSS', 'Python', 'JavaScript', 'React', 'TypeScript', 'Node.js', 'Express.js', 'Git', 'Bash'];
   
   const handleContact = (type: string) => {
     console.log(`${type} contact clicked`);
@@ -54,8 +54,8 @@ export default function DeveloperProfile() {
         <div>
           <h4 className="font-medium text-sm mb-2">About</h4>
           <p className="text-xs text-muted-foreground leading-relaxed" data-testid="text-developer-bio">
-            Passionate about creating engaging web experiences. Built this Shoti app to showcase 
-            short-form video content with a clean, modern interface.
+            Passionate about creating engaging web experiences. Built this Shoti web to showcase 
+            short-form video content with a clean, modern interface :)
           </p>
         </div>
         
@@ -83,7 +83,7 @@ export default function DeveloperProfile() {
           <Button 
             size="sm" 
             variant="outline"
-            onClick={() => handleContact('Email')}
+            onClick={() => handleContact('mailto')}
             data-testid="button-email"
           >
             <Mail className="w-3 h-3" />
